@@ -1,5 +1,12 @@
 require('dotenv').config();
 
+const mongoose = require('mongoose');
+
+const mySecret = process.env['MONGO_URI'];
+
+// Note that for this to work in Replit, we need to whitelist our IP address and also connect from anywhere (0.0.0.0) in mongodb database
+mongoose.connect(mySecret, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 let Person;
 
